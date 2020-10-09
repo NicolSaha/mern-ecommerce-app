@@ -20,5 +20,3 @@ const users = [
 ];
 
 export default users;
-
-//TODO: async hash passwords
