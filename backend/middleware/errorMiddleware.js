@@ -9,7 +9,7 @@ const errorHandler = (error, request, response, next) => {
   response.status(statusCode);
   response.json({
     message: error.message,
-    stack: process.env.NOVE_ENV === 'production' ? null : error.stack,
+    stack: process.env.NODE_ENV === 'production' ? null : error.stack,
   });
 };
 
