@@ -8,7 +8,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-
   const logoutHandler = () => {
     dispatch(logout());
   };
@@ -20,7 +19,6 @@ const Header = () => {
           <LinkContainer to='/'>
             <Navbar.Brand>WEBSHOP</Navbar.Brand>
           </LinkContainer>
-
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
