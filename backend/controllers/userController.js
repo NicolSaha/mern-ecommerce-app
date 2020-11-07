@@ -76,7 +76,7 @@ const getUserProfile = asyncHandler(async (request, response) => {
   }
 });
 
-//@DESCRIPTION Update user profile
+//@DESCR Update user profile
 //@ROUTE PUT /api/users/profile
 //@ACCESS Private
 const updateUserProfile = asyncHandler(async (request, response) => {
@@ -104,4 +104,18 @@ const updateUserProfile = asyncHandler(async (request, response) => {
   }
 });
 
-export { authenticateUser, registerUser, getUserProfile, updateUserProfile };
+// @DESC    Get all users
+// @ROUTE   GET /api/users
+// @ACCESS  Private/Admin
+const getUsers = asyncHandler(async (request, response) => {
+  const users = await User.find({});
+  response.json(users);
+});
+
+export {
+  authenticateUser,
+  registerUser,
+  getUserProfile,
+  updateUserProfile,
+  getUsers,
+};
