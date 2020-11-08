@@ -1,5 +1,5 @@
 import path from 'path';
-import express, { response } from 'express';
+import express from 'express';
 import multer from 'multer';
 const router = express.Router();
 
