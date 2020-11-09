@@ -8,12 +8,12 @@ import {
   ListGroup,
   Card,
   Button,
-  ListGroupItem,
   Form,
 } from 'react-bootstrap';
 import Rating from '../components/Rating';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Meta from '../components/Meta';
 import {
   listProductDetails,
   createProductReview,
@@ -30,15 +30,15 @@ const ProductScreen = ({ history, match }) => {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
-  const userLogin = useSelector((state) => state.usereLogin);
+  const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  const createProductReview = useSelector((state) => state.createProductReview);
+  const productReviewCreate = useSelector((state) => state.productReviewCreate);
   const {
-    error: errorProductReview,
     success: successProductReview,
     loading: loadingProductReview,
-  } = createProductReview;
+    error: errorProductReview,
+  } = productReviewCreate;
 
   useEffect(() => {
     if (successProductReview) {
@@ -49,7 +49,7 @@ const ProductScreen = ({ history, match }) => {
       dispatch(listProductDetails(match.params.id));
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
-  }, [dispatch, match, successProductReview, product._id]);
+  }, [dispatch, match, successProductReview]);
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
@@ -67,7 +67,7 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
-      <Link className='btn btn-dark my-3' to='/'>
+      <Link className='btn btn-light my-3' to='/'>
         Go Back
       </Link>
       {loading ? (
@@ -76,6 +76,7 @@ const ProductScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
@@ -97,7 +98,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col>
+            <Col md={3}>
               <Card>
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
@@ -108,11 +109,12 @@ const ProductScreen = ({ history, match }) => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
+
                   <ListGroup.Item>
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'In stock' : 'Out of stock'}
+                        {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -125,7 +127,7 @@ const ProductScreen = ({ history, match }) => {
                           <Form.Control
                             as='select'
                             value={qty}
-                            onChange={(event) => setQty(event.target.value)}
+                            onChange={(e) => setQty(e.target.value)}
                           >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
@@ -143,11 +145,11 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block btn-dark'
+                      className='btn-block'
                       type='button'
                       disabled={product.countInStock === 0}
                     >
-                      Add to cart
+                      Add To Cart
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
