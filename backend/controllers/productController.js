@@ -5,7 +5,7 @@ import Product from '../models/productModel.js';
 //@ROUTE  GET /API/PRODUCTS
 //@ACCESS PUBLIC
 const getProducts = asyncHandler(async (request, response) => {
-  const pageSize = 6;
+  const pageSize = 8;
   const page = Number(request.query.pageNumber) || 1;
   const keyword = request.query.keyword
     ? {
@@ -146,6 +146,15 @@ const createProductReview = asyncHandler(async (request, response) => {
   }
 });
 
+// @DESCR   Get top rated products
+// @ROUTE   GET /api/products/top
+// @ACCESS  Public
+const getTopProducts = asyncHandler(async (request, response) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+
+  response.json(products);
+});
+
 export {
   getProducts,
   getProductById,
@@ -153,4 +162,5 @@ export {
   createProduct,
   updateProduct,
   createProductReview,
+  getTopProducts,
 };

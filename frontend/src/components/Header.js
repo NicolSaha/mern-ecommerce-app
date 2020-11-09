@@ -8,22 +8,24 @@ import { logout } from '../actions/userActions';
 
 const Header = () => {
   const dispatch = useDispatch();
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
   const logoutHandler = () => {
     dispatch(logout());
   };
 
   return (
     <header>
-      <Navbar bg='light' variant='light' expand='lg' CollapsOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>WILD EXTRACTS</Navbar.Brand>
+            <Navbar.Brand>WILDEXTRACTS</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Route render={({ history }) => <SearchBox history={history} />} />
           <Navbar.Collapse id='basic-navbar-nav'>
+            <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
