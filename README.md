@@ -1,5 +1,9 @@
 # ✨ MERN WEBSHOP
 
+## 💭 Live Version
+
+- [Heroku](https://wildextracts.herokuapp.com)
+
 ## 🎓 Features
 
 - Home screen
@@ -18,10 +22,6 @@
 ### 📓 Recruiters
 
 Are you a recruiter and would you like to have access to the admin screen to check out functionality? Shoot me a message at www.nicolsaha.dev and I will gladly get back to you!
-
-## 💭 Live Version
-
-- [Heroku](https://wildextracts.herokuapp.com)
 
 ## 🛠 Built with
 
