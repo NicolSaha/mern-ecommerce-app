@@ -12,8 +12,8 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To Wild Extracts webshop',
-  description: 'We sell organic essential oils, sources sustainabily in Nepal',
+  title: 'Welcome to Wild Extracts Webshop',
+  description: 'We sell organic essential oils, sourced sustainabily in Nepal!',
   keywords: 'essential oils, organic, Nepal',
 };
 
