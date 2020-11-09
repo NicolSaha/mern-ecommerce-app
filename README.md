@@ -5,7 +5,7 @@
 - Home screen
 - Product screen
 - Product Rating and Review System
-- Product Database
+- Product, User, Orders Database
 - Custom Error Handling
 - Page Loader
 - Shopping Cart (adding, deleting, updating products)
