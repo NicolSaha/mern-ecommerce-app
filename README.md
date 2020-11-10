@@ -4,6 +4,11 @@
 
 - [Heroku](https://wildextracts.herokuapp.com)
 
+## Work In Progress ...
+
+- Back-end finished
+- **Currently working on the front-end!**
+
 ## 🎓 Features
 
 - Home screen
@@ -21,14 +26,17 @@
 
 ### 📓 Recruiters
 
-Are you a recruiter and would you like to have access to the admin screen to check out functionality? Shoot me a message at www.nicolsaha.dev and I will gladly get back to you!
+Are you a recruiter and would you like to have access to the admin screen to check out functionality? Shoot me a message at www.nicolsaha.dev or nicol.saha@gmail.com, and I will gladly get back to you!
 
 ## 🛠 Built with
 
 - [PHP Storm](https://www.jetbrains.com/phpstorm/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Markdown](https://www.markdownguide.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express](https://expressjs.com/)
 - [React](https://reactjs.org/)
+- [Node](https://nodejs.org/en/)
 - [Bootstrap](https://getbootstrap.com/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
 
